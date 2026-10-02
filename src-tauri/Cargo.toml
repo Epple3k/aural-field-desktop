@@ -1,0 +1,16 @@
+[package]
+name = "aural-field"
+version = "1.0.0"
+description = "A tiny always-on-top generative ambient instrument."
+authors = ["Emit Rice"]
+edition = "2021"
+
+[lib]
+name = "aural_field_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }

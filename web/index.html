@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aural Field</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main id="instrument" class="instrument pip-mode">
+    <canvas id="formCanvas" aria-hidden="true"></canvas>
+
+    <header class="header">
+      <div class="brand">
+        <b>Aural Field</b>
+        <small>generative ambient instrument</small>
+      </div>
+      <div class="header-readout">
+        <div>function<strong id="fnReadout">Lydian / bloom</strong></div>
+        <div>root<strong id="rootReadout">C</strong></div>
+        <div>seed<strong id="seedReadout">0000</strong></div>
+      </div>
+    </header>
+
+    <section class="stage">
+      <div class="stage-note">
+        <b>One object, three forces.</b><br>
+        Density changes frequency. Space changes amplitude. Motion changes phase.
+      </div>
+
+      <div class="form-readout">
+        <span>f<b id="freqReadout">6.8</b></span>
+        <span>a<b id="ampReadout">0.24</b></span>
+        <span>φ<b id="phaseReadout">0.36</b></span>
+      </div>
+
+      <div class="material" id="material" aria-label="Tone material control">
+        <span class="mat-label soft">soft</span>
+        <span class="mat-label bright">bright</span>
+        <span class="mat-label pure">pure</span>
+        <span class="mat-label grain">grain</span>
+        <div class="mat-dot" id="matDot"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="play-cluster">
+        <div class="context" id="contextPopup">
+          <div class="context-head"><span>scale / parent function</span><span>select</span></div>
+          <div class="context-grid" id="modeGrid"></div>
+          <div class="context-foot">
+            <span class="context-name" id="contextName">lydian / bloom</span>
+            <button class="regen" id="regen">new world ↻</button>
+          </div>
+        </div>
+
+        <div class="play-row">
+          <button class="play" id="play" aria-label="Play or pause">
+            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2v13.6L19 12z"/></svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+          </button>
+          <div class="play-meta">
+            <div class="state" id="state">idle</div>
+            <div class="chord" id="chord">C / lydian</div>
+            <div class="hover-hint">hover play for scale</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="macros">
+        <div class="macro">
+          <div class="macro-head"><span>density</span><span id="densityValue">42</span></div>
+          <div class="track-row">
+            <i>·</i>
+            <input id="density" type="range" min="0" max="100" value="42" aria-label="Density">
+            <i>✣</i>
+          </div>
+          <div class="macro-desc">event rate · overtones · chord extensions · form frequency</div>
+        </div>
+
+        <div class="macro">
+          <div class="macro-head"><span>space</span><span id="spaceValue">64</span></div>
+          <div class="track-row">
+            <i>○</i>
+            <input id="space" type="range" min="0" max="100" value="64" aria-label="Space">
+            <i>◎</i>
+          </div>
+          <div class="macro-desc">stereo width · register · tails · reverb · form amplitude</div>
+        </div>
+
+        <div class="macro">
+          <div class="macro-head"><span>motion</span><span id="motionValue">34</span></div>
+          <div class="track-row">
+            <i>—</i>
+            <input id="motion" type="range" min="0" max="100" value="34" aria-label="Motion">
+            <i>∿</i>
+          </div>
+          <div class="macro-desc">modulation · detune · harmonic pace · form phase</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

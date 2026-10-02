@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Aural Field",
+  "version": "1.0.0",
+  "identifier": "com.epple3k.auralfield",
+  "build": {
+    "frontendDist": "../web"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Aural Field",
+        "width": 380,
+        "height": 520,
+        "minWidth": 320,
+        "minHeight": 420,
+        "resizable": true,
+        "maximizable": false,
+        "fullscreen": false,
+        "alwaysOnTop": true,
+        "visibleOnAllWorkspaces": true,
+        "decorations": true,
+        "center": true,
+        "shadow": true,
+        "backgroundColor": "#EEEAE1"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "category": "Music",
+    "shortDescription": "A tiny always-on-top generative ambient instrument.",
+    "longDescription": "Aural Field is a generative ambient instrument with procedural sound and parameter-driven graphics. It opens as one small movable window and stays above your work.",
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      }
+    }
+  }
+}
